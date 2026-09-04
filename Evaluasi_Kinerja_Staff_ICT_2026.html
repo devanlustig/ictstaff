@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Laporan Evaluasi Kinerja Staff ICT 2026</title>
+    <style>
+        @page {
+            size: A4 landscape;
+            margin: 0;
+        }
+        
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0f172a;
+            color: #f8fafc;
+            font-size: 10.5pt;
+        }
+
+        .slide {
+            width: 297mm;
+            height: 210mm;
+            page-break-after: always;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            padding: 18mm 20mm;
+            box-sizing: border-box;
+        }
+
+        /* Slide 1: Cover */
+        .cover {
+            display: block;
+            background: radial-gradient(circle at top right, #1e3a8a 0%, #0f172a 70%);
+        }
+
+        .cover-content {
+            margin-top: 35mm;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 16px;
+            background-color: rgba(59, 130, 246, 0.2);
+            border: 1px solid #3b82f6;
+            color: #60a5fa;
+            border-radius: 20px;
+            font-size: 10pt;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        h1.main-title {
+            font-size: 32pt;
+            font-weight: 800;
+            color: #ffffff;
+            margin: 0 0 10px 0;
+            line-height: 1.2;
+        }
+
+        h2.sub-title {
+            font-size: 18pt;
+            color: #94a3b8;
+            font-weight: 400;
+            margin: 0 0 40px 0;
+        }
+
+        .meta-grid {
+            width: 100%;
+            margin-top: 30mm;
+            border-top: 1px solid #334155;
+            padding-top: 20px;
+        }
+
+        .meta-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .meta-table td {
+            padding: 5px 0;
+            color: #cbd5e1;
+            font-size: 10pt;
+        }
+
+        .meta-label {
+            color: #64748b;
+            font-size: 9pt;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Common Slide Header */
+        .slide-header {
+            margin-bottom: 15px;
+            border-bottom: 2px solid #334155;
+            padding-bottom: 10px;
+        }
+
+        .slide-title {
+            font-size: 18pt;
+            font-weight: 700;
+            color: #f8fafc;
+            margin: 0;
+        }
+
+        .slide-subtitle {
+            font-size: 9.5pt;
+            color: #94a3b8;
+            margin-top: 3px;
+        }
+
+        /* Tables */
+        .styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 9pt;
+        }
+
+        .styled-table th {
+            background-color: #1e293b;
+            color: #38bdf8;
+            text-align: left;
+            padding: 8px 10px;
+            border-bottom: 2px solid #334155;
+            font-weight: 600;
+        }
+
+        .styled-table td {
+            padding: 7px 10px;
+            border-bottom: 1px solid #334155;
+            color: #e2e8f0;
+        }
+
+        .styled-table tr:nth-child(even) {
+            background-color: rgba(30, 41, 59, 0.4);
+        }
+
+        .styled-table tfoot td {
+            font-weight: bold;
+            background-color: #1e293b;
+            color: #38bdf8;
+            border-top: 2px solid #334155;
+        }
+
+        /* Status & Badges */
+        .predikat-sangat-baik {
+            background-color: rgba(16, 185, 129, 0.2);
+            color: #34d399;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .predikat-baik {
+            background-color: rgba(59, 130, 246, 0.2);
+            color: #60a5fa;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .card-container {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .column-left {
+            width: 53%;
+            float: left;
+        }
+
+        .column-right {
+            width: 44%;
+            float: right;
+        }
+
+        .card {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            padding: 12px 14px;
+            margin-bottom: 12px;
+        }
+
+        .card-title {
+            font-size: 10.5pt;
+            font-weight: 700;
+            color: #38bdf8;
+            margin-top: 0;
+            margin-bottom: 8px;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 4px;
+        }
+
+        ul.custom-list {
+            margin: 0;
+            padding-left: 16px;
+            color: #cbd5e1;
+            font-size: 9pt;
+        }
+
+        ul.custom-list li {
+            margin-bottom: 4px;
+            line-height: 1.35;
+        }
+
+        .score-box {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0284c7 100%);
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+
+        .score-number {
+            font-size: 22pt;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .score-label {
+            font-size: 8.5pt;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.9;
+            margin-top: 3px;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 8mm;
+            left: 20mm;
+            right: 20mm;
+            font-size: 8pt;
+            color: #64748b;
+            border-top: 1px solid #1e293b;
+            padding-top: 6px;
+        }
+
+        .footer-left {
+            float: left;
+        }
+
+        .footer-right {
+            float: right;
+        }
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SLIDE 1: COVER -->
+    <div class="slide cover">
+        <div class="cover-content">
+            <span class="badge">INTERNAL & CONFIDENTIAL</span>
+            <h1 class="main-title">LAPORAN EVALUASI KINERJA<br>STAFF ICT 2026</h1>
+            <h2 class="sub-title">Periode Evaluasi: April 2026 – September 2026</h2>
+        </div>
+        
+        <div class="meta-grid">
+            <table class="meta-table">
+                <tr>
+                    <td class="meta-label">Departemen</td>
+                    <td class="meta-label">Disusun Oleh</td>
+                    <td class="meta-label">Tanggal</td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bold; font-size: 11pt;">Information & Communication Technology</td>
+                    <td style="font-weight: bold; font-size: 11pt;">Ade Irfan Hilmi</td>
+                    <td style="font-weight: bold; font-size: 11pt;">5 September 2026</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- SLIDE 2: RINGKASAN EKSEKUTIF -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2 class="slide-title">1. Ringkasan Eksekutif</h2>
+            <div class="slide-subtitle">Rangkuman hasil penilaian kinerja dan rekomendasi keputusan kontrak</div>
+        </div>
+
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Nama Staff</th>
+                    <th>Posisi / Peran</th>
+                    <th>Nilai</th>
+                    <th>Predikat</th>
+                    <th>Kontribusi</th>
+                    <th>Rekomendasi Utama</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="font-weight: bold;">Ariel</td>
+                    <td>IT Support</td>
+                    <td style="font-weight: bold; color: #60a5fa;">86.95</td>
+                    <td><span class="predikat-baik">Baik</span></td>
+                    <td>High</td>
+                    <td>Perpanjang Kontrak 6 Bulan</td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bold;">Deni</td>
+                    <td>Backend Developer & Automation</td>
+                    <td style="font-weight: bold; color: #34d399;">90.2</td>
+                    <td><span class="predikat-sangat-baik">Sangat Baik</span></td>
+                    <td>Very High</td>
+                    <td>Perpanjang 1 Tahun + Benefit</td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bold;">Bagus</td>
+                    <td>Fullstack Developer</td>
+                    <td style="font-weight: bold; color: #34d399;">90.4</td>
+                    <td><span class="predikat-sangat-baik">Sangat Baik</span></td>
+                    <td>Very High</td>
+                    <td>Perpanjang 1 Tahun + Benefit</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="card" style="margin-top: 20px;">
+            <div class="card-title">Prinsip Rekomendasi & Decision Making</div>
+            <ul class="custom-list">
+                <li><strong>Prinsip Kinerja:</strong> Perpanjangan diberikan kepada staff yang secara konsisten memenuhi/melampaui ekspektasi.</li>
+                <li><strong>Prinsip Benefit:</strong> Didasarkan pada kontribusi nyata, kompleksitas teknis, business impact, dan kelangkaan kompetensi—bukan semata-mata masa kerja.</li>
+                <li><strong>Pengembangan Terukur:</strong> Kontrak berikutnya dilengkapi target indikator teknis yang terukur agar evaluasi berbasis hasil nyata.</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <div class="footer-left">Evaluasi Kinerja Staff ICT 2026</div>
+            <div class="footer-right">Halaman 2</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 3: METODOLOGI & RUBRIK -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2 class="slide-title">2. Metodologi & Rubrik Penilaian</h2>
+            <div class="slide-subtitle">Pembobotan proporsional disesuaikan dengan karakter dan tanggung jawab peran</div>
+        </div>
+
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Aspek Evaluasi</th>
+                    <th>Bobot</th>
+                    <th>Definisi Operasional</th>
+                    <th>Contoh Bukti / Metric</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="font-weight: bold;">Pencapaian Target</td>
+                    <td>25 - 30%</td>
+                    <td>Capaian target, delivery, SLA, penyelesaian backlog</td>
+                    <td>Daftar pekerjaan/fitur, tiket SLA</td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bold;">Kualitas & Ketepatan</td>
+                    <td>20 - 25%</td>
+                    <td>Rework, maintainability, akurasi hasil pekerjaan</td>
+                    <td>Bug/rework rate, QA, code review</td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bold;">Problem Solving</td>
+                    <td>20%</td>
+                    <td>Kemampuan analisis dan kecepatan penyelesaian masalah</td>
+                    <td>Incident & problem log</td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bold;">Responsiveness</td>
+                    <td>10 - 25%</td>
+                    <td>Kecepatan merespons dan menindaklanjuti permintaan</td>
+                    <td>Response time, SLA tiket</td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bold;">Inisiatif & Improvement</td>
+                    <td>10 - 15%</td>
+                    <td>Automation, simplifikasi proses, tindakan preventif</td>
+                    <td>Improvement / automation record</td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bold;">Kerja Sama & Komunikasi</td>
+                    <td>5 - 10%</td>
+                    <td>Kolaborasi tim, handover, knowledge sharing</td>
+                    <td>Feedback user/tim, kualitas dokumentasi</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="footer">
+            <div class="footer-left">Evaluasi Kinerja Staff ICT 2026</div>
+            <div class="footer-right">Halaman 3</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 4: ARIEL -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2 class="slide-title">3. Evaluasi Kinerja: Ariel (IT Support)</h2>
+            <div class="slide-subtitle">Fokus: Kelancaran operasional user, troubleshooting, dan responsiveness</div>
+        </div>
+
+        <div class="card-container clearfix">
+            <div class="column-left">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Aspek Penilaian</th>
+                            <th>Bobot</th>
+                            <th>Nilai</th>
+                            <th>Skor Akhir</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Pencapaian pekerjaan/target</td>
+                            <td>20%</td>
+                            <td>88</td>
+                            <td>17.60</td>
+                        </tr>
+                        <tr>
+                            <td>Kualitas & ketepatan</td>
+                            <td>20%</td>
+                            <td>85</td>
+                            <td>17.00</td>
+                        </tr>
+                        <tr>
+                            <td>Problem solving</td>
+                            <td>20%</td>
+                            <td>87</td>
+                            <td>17.40</td>
+                        </tr>
+                        <tr>
+                            <td>Responsiveness</td>
+                            <td>20%</td>
+                            <td>90</td>
+                            <td>18.00</td>
+                        </tr>
+                        <tr>
+                            <td>Inisiatif & improvement</td>
+                            <td>15%</td>
+                            <td>85</td>
+                            <td>12.75</td>
+                        </tr>
+                        <tr>
+                            <td>Kerja sama & komunikasi</td>
+                            <td>5%</td>
+                            <td>85</td>
+                            <td>4.25</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3">Nilai Akhir / Predikat</td>
+                            <td>86.95 (Baik)</td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <div class="card" style="margin-top: 10px;">
+                    <div class="card-title">Kekuatan Utama</div>
+                    <ul class="custom-list">
+                        <li>Sangat responsif terhadap kebutuhan & incident user.</li>
+                        <li>Troubleshooting harian mandiri dan efektif.</li>
+                        <li>Komunikasi user yang baik mempercepat resolusi.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">Area Improvement</div>
+                    <ul class="custom-list">
+                        <li>Meningkatkan dokumentasi incident & knowledge base.</li>
+                        <li>Transisi dari reactive support menuju preventive maintenance.</li>
+                        <li>Memperluas pemahaman networking, infrastructure & security.</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="column-right">
+                <div class="score-box" style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);">
+                    <div class="score-number">86.95</div>
+                    <div class="score-label">Predikat: BAIK</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">Rekomendasi & Benefit</div>
+                    <p style="margin: 0 0 10px 0; font-weight: bold; color: #34d399;">REKOMENDASI: PERPANJANG 6 BULAN</p>
+                    <ul class="custom-list">
+                        <li><strong>Training/Sertifikasi :</strong> Networking, IT Infrastructure, atau IT Support standard.</li>
+                    </ul>
+                </div>
+
+                 <div class="card">
+                    <div class="card-title">Target Kontrak Berikutnya</div>
+                    <ul class="custom-list">
+                        <li>Membangun IT Knowledge Base / FAQ mandiri.</li>
+                        <li>Meningkatkan kelengkapan pencatatan incident & root cause.</li>
+                        <li>Membuat Jadwal Preventive Maintenance berkala.</li>
+                        <li>Menurunkan angka repeat incident pada kategori sama.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-left">Evaluasi Kinerja Staff ICT 2026</div>
+            <div class="footer-right">Halaman 4</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 5: DENI -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2 class="slide-title">4. Evaluasi Kinerja: Deni (Backend & Automation)</h2>
+            <div class="slide-subtitle">Fokus: System reliability, automation efficiency, dan kompleksitas teknis</div>
+        </div>
+
+        <div class="card-container clearfix">
+            <div class="column-left">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Aspek Penilaian</th>
+                            <th>Bobot</th>
+                            <th>Nilai</th>
+                            <th>Skor Akhir</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Pencapaian pekerjaan/target</td>
+                            <td>25%</td>
+                            <td>91</td>
+                            <td>22.75</td>
+                        </tr>
+                        <tr>
+                            <td>Kualitas & ketepatan</td>
+                            <td>25%</td>
+                            <td>90</td>
+                            <td>22.50</td>
+                        </tr>
+                        <tr>
+                            <td>Problem solving</td>
+                            <td>20%</td>
+                            <td>92</td>
+                            <td>18.40</td>
+                        </tr>
+                        <tr>
+                            <td>Responsiveness</td>
+                            <td>10%</td>
+                            <td>88</td>
+                            <td>8.80</td>
+                        </tr>
+                        <tr>
+                            <td>Inisiatif & improvement</td>
+                            <td>10%</td>
+                            <td>93</td>
+                            <td>9.30</td>
+                        </tr>
+                        <tr>
+                            <td>Kerja sama & komunikasi</td>
+                            <td>10%</td>
+                            <td>85</td>
+                            <td>8.50</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3">Nilai Akhir / Predikat</td>
+                            <td>90.20 (Sangat Baik)</td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <div class="card" style="margin-top: 10px;">
+                    <div class="card-title">Kekuatan Utama</div>
+                    <ul class="custom-list">
+                        <li>Backend development kuat & mandiri.</li>
+                        <li>Otomatisasi memberikan <em>recurring efficiency</em>.</li>
+                        <li>Menangani task kompleksitas tinggi dengan baik.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">Area Improvement</div>
+                    <ul class="custom-list">
+                        <li>Standarisasi dokumentasi teknis & deployment notes.</li>
+                        <li>Memperkuat security, logging, monitoring & fallback.</li>
+                        <li>Knowledge sharing untuk menghindari single point of failure.</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="column-right">
+                <div class="score-box" style="background: linear-gradient(135deg, #065f46 0%, #10b981 100%);">
+                    <div class="score-number">90.20</div>
+                    <div class="score-label">Predikat: SANGAT BAIK</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">Rekomendasi & Benefit</div>
+                    <p style="margin: 0 0 10px 0; font-weight: bold; color: #34d399;">REKOMENDASI: PERPANJANG 1 TAHUN + BENEFIT</p>
+                    <ul class="custom-list">
+                        <li><strong>Kompensasi :</strong> Penyesuaian kompensasi.</li>
+                        <li><strong>Training :</strong> Training Backend / Cloud / DevOps Certification.</li>
+                        <li><strong>Jalur Karir :</strong> Senior Backend / Automation Engineer.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">Target Kontrak Berikutnya</div>
+                    <ul class="custom-list">
+                        <li>Menambah otomasi pada proses repetitive utama bisnis.</li>
+                        <li>Implementasi monitoring, logging, & alerting sistem.</li>
+                        <li>Standarisasi standar coding & dokumentasi teknis.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-left">Evaluasi Kinerja Staff ICT 2026</div>
+            <div class="footer-right">Halaman 5</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 6: BAGUS -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2 class="slide-title">5. Evaluasi Kinerja: Bagus (Fullstack Developer)</h2>
+            <div class="slide-subtitle">Fokus: End-to-end delivery, fleksibilitas aplikasi, dan pemahaman bisnis</div>
+        </div>
+
+        <div class="card-container clearfix">
+            <div class="column-left">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Aspek Penilaian</th>
+                            <th>Bobot</th>
+                            <th>Nilai</th>
+                            <th>Skor Akhir</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Pencapaian pekerjaan/target</td>
+                            <td>25%</td>
+                            <td>91</td>
+                            <td>22.75</td>
+                        </tr>
+                        <tr>
+                            <td>Kualitas & ketepatan</td>
+                            <td>25%</td>
+                            <td>90</td>
+                            <td>22.50</td>
+                        </tr>
+                        <tr>
+                            <td>Problem solving</td>
+                            <td>20%</td>
+                            <td>93</td>
+                            <td>18.60</td>
+                        </tr>
+                        <tr>
+                            <td>Responsiveness</td>
+                            <td>10%</td>
+                            <td>89</td>
+                            <td>8.90</td>
+                        </tr>
+                        <tr>
+                            <td>Inisiatif & improvement</td>
+                            <td>10%</td>
+                            <td>90</td>
+                            <td>9.00</td>
+                        </tr>
+                        <tr>
+                            <td>Kerja sama & komunikasi</td>
+                            <td>10%</td>
+                            <td>87</td>
+                            <td>8.70</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3">Nilai Akhir / Predikat</td>
+                            <td>90.40 (Sangat Baik)</td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <div class="card" style="margin-top: 10px;">
+                    <div class="card-title">Kekuatan Utama</div>
+                    <ul class="custom-list">
+                        <li>Pengembangan end-to-end (Frontend, Backend, DB).</li>
+                        <li>Pemahaman proses bisnis & operational flow sangat baik.</li>
+                        <li>Resource fleksibel untuk kebutuhan enhancement cepat.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">Area Improvement</div>
+                    <ul class="custom-list">
+                        <li>Tingkatkan maintainability & code standardisation.</li>
+                        <li>Terapkan automated testing pada modul prioritas.</li>
+                        <li>Perkuat security review sebelum release.</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="column-right">
+                <div class="score-box" style="background: linear-gradient(135deg, #065f46 0%, #10b981 100%);">
+                    <div class="score-number">90.40</div>
+                    <div class="score-label">Predikat: SANGAT BAIK</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">Rekomendasi & Benefit</div>
+                    <p style="margin: 0 0 10px 0; font-weight: bold; color: #34d399;">REKOMENDASI: PERPANJANG 1 TAHUN + BENEFIT</p>
+                    <ul class="custom-list">
+                        <li><strong>Kompensasi:</strong> Penyesuaian kompensasi sesuai tingkat tanggung jawab.</li>
+                        <li><strong>Training:</strong> Training/certification fullstack, cloud, security, atau software engineering.</li>
+                        <li><strong>Jalur Karir:</strong> Senior Fullstack / Technical Lead.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">Target Kontrak Berikutnya</div>
+                    <ul class="custom-list">
+                        <li>Meningkatkan kualitas & dokumentasi modul aplikasi prioritas.</li>
+                        <li>Penerapan unit / integration testing pada modul kritis.</li>
+                        <li>Mengambil ownership penuh sebagai PIC Teknis aplikasi tertentu.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-left">Evaluasi Kinerja Staff ICT 2026</div>
+            <div class="footer-right">Halaman 6</div>
+        </div>
+    </div>
+
+</body>
+</html>
